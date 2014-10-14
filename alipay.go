@@ -7,11 +7,12 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"encoding/json"
-	"github.com/astaxie/beego"
 	"net/url"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/astaxie/beego"
 )
 
 var (
@@ -125,7 +126,7 @@ func CreateAlipaySign(orderId string, fee float32, nickname string, subject stri
 			<input type="hidden" name="sign_type" value="` + param.SignType + `">
 		</form>
 		<script>
-			$("#alipaysubmit").submit();
+			document.forms['alipaysubmit'].submit();
 		</script>
 	`
 }
